@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Link } from 'react-router-dom';
 import { fetchPets } from '../actions';
 import PetsNew from './PetsNew';
 import PetsShow from './PetsShow';
@@ -14,7 +14,10 @@ class PetsPage extends Component {
 
   render() {
     return (
-      <div>Pets Page</div>
+      <div>
+        <div>Pets Page</div>
+        {this.props.pets.map( e => <PetsList pets={this.props.pets}/>)}
+      </div>
     )
   }
 };
